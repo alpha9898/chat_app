@@ -1,3 +1,4 @@
+import 'package:chat_app/constants.dart';
 import 'package:chat_app/pages/register_page.dart';
 import 'package:chat_app/widgets/custom_button.dart';
 import 'package:chat_app/widgets/custom_text_field.dart';
@@ -9,25 +10,30 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF2B475E),
+      backgroundColor: kPrimaryColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
-        child: Column(
+        child: ListView(
           children: [
-            Spacer(
-              flex: 2,
+            SizedBox(
+              height: 75,
             ),
-            Image.asset('assets/images/scholar.png'),
-            const Text(
-              'Scholer Chat',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 32,
-                fontFamily: 'pacifico',
-              ),
+            Image.asset('assets/images/scholar.png', height: 100),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Scholer Chat',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 32,
+                    fontFamily: 'pacifico',
+                  ),
+                ),
+              ],
             ),
-            Spacer(
-              flex: 1,
+            SizedBox(
+              height: 75,
             ),
             const Row(
               children: [
@@ -69,7 +75,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.of(context).pushNamed('RegisterPage');
+                    Navigator.pushNamed(context, RegisterPage.id);
                   },
                   child: const Text(
                     '  Register',
@@ -79,9 +85,6 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ],
-            ),
-            Spacer(
-              flex: 2,
             ),
           ],
         ),

@@ -12,9 +12,10 @@ class ScholerChat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       routes: {
         'LoginPage': (context) => const LoginPage(),
-        'RegisterPage': (context) => const RegisterPage(),
+        RegisterPage.id: (context) => RegisterPage(),
       },
       initialRoute: 'LoginPage',
       home: const LoginPage(),
